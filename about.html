@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innowix Workspace - Homepage</title>
+    <title>Innowix Workspace - About Page</title>
     <script src="https://kit.fontawesome.com/3a3e3b7b30.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -195,10 +195,6 @@
             box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
             transition: transform 0.6s ease, z-index 0.6s step-end;
             transform-style: preserve-3d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
 
         .nft-card-1 {
@@ -238,23 +234,27 @@
         }
 
         .nft-image {
-            height: 100%;
-            width: 100%;
+            background: url('path/to/your/image.jpg') no-repeat center/cover;
+            height: 300px;
             border-radius: 10px;
+            position: relative;
             overflow: hidden;
         }
 
-        .nft-image img {
-            height: 100%;
+        .nft-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            object-fit: cover;
-            border-radius: 10px;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+            mix-blend-mode: screen;
         }
 
         .nft-details {
             padding: 1rem 0;
         }
-
 
         .owner {
             font-size: 0.9rem;
@@ -506,10 +506,12 @@
             height: 48px;
             margin: 0 auto;
             fill: #3b82f6;
+            /* Blue color for the icon */
         }
 
         .icon-utility {
             fill: #8b5cf6;
+            /* Purple color for the utility icon */
         }
 
         .image-container {
@@ -867,6 +869,7 @@
             transform: scale(1.2);
         }
 
+        /* Responsive styles */
         @media (max-width: 768px) {
             .footer.details {
                 flex-direction: column;
@@ -913,72 +916,6 @@
         </ul>
     </nav>
     <div class="content">
-
-        <div class="container">
-            <div class="content">
-                <h1>Innowix<span class="highlight"> Workspace</span></h1>
-                <p>Innovate, Integrate, Inspire – Innowix Workspace
-                </p>
-                <button class="cta-btn">Discord</button>
-            </div>
-            <div class="nft-stack">
-                <div class="nft-card nft-card-3">
-                    <div class="nft-image"><img src="graphicdesign.jpg" alt=""></div>
-                </div>
-                <div class="nft-card nft-card-2">
-                    <div class="nft-image"><img src="Webdevelopment.jpg" alt=""></div>
-                </div>
-                <div class="nft-card nft-card-1">
-                    <div class="nft-image"><img src="logo.png" alt=""></div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="container_2">
-            <div class="phase">
-                <h2>1.<br>Webdevelopment</h2>
-                <div class="phase-content">
-                    <img src="Webdevelopment.jpg" alt="" class="phase-img">
-                    <ul>
-                        <li>Creating websites and web applications using coding languages like HTML, CSS, and JavaScript.</li>
-                        <li> <a class="bscscan-btn" href="#">Buy Now</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="phase">
-                <h2>2.<br>Graphic Designing</h2>
-                <div class="phase-content">
-                    <img src="graphicdesign.jpg" alt="" class="phase-img">
-
-                    <ul>
-                        <li>Designing visuals and graphics for various purposes, such as logos, posters, and digital artwork.</li>
-                        <li> <a class="bscscan-btn" href="#">Buy Now</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="phase">
-                <h2>3.<br>Event Management</h2>
-
-                <div class="phase-content">
-                    <img src="eventmanagement.jpg" alt="" class="phase-img">
-
-                    <ul>
-                        <li>Planning and organizing events, ensuring everything runs smoothly from start to finish.</li>
-                        <li> <a class="bscscan-btn" href="#">Buy Now</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container_1" style="margin-top: 100px;">
-            <div class="title" style="margin-right: 150px;">Payment <br> Options </div>
-            <div class="subtitle"><img src="esewa.png" alt="" class="phase-img"> <br> Esewa</div>
-            <div class="subtitle"><img src="khalti.jpg" alt="" class="phase-img"> <br> Khalti</div>
-            <div class="subtitle"><img src="imepay.jpg" alt="" class="phase-img"> <br> IME PAY</div>
-        </div>
         <div class="container" style="margin-top: 100px;">
             <div class="header">
                 <h1>
@@ -1150,7 +1087,7 @@
             <div class="footer-detail">
                 <p>Nepal</p>
                 <p>Email: innowixworkspace@gmail.com <br>
-                    Phone: 9888888888</p>
+                     Phone: 9888888888</p>
             </div>
         </div>
         <div class="footer-links">
@@ -1166,7 +1103,6 @@
 
         <div class="footer-socials">
             <p style="text-decoration: none; font-size: 30px;">Socials</p>
-
             <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
             <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
@@ -1267,7 +1203,7 @@
         let testimonialIndex = 0;
         let startX = 0;
         let isDragging = false;
-        const intervalTime = 7000;
+        const intervalTime = 7000; // 7 seconds
         let autoSlideInterval;
         const testimonials = document.querySelectorAll('.testimonial');
         const testimonialSlider = document.querySelector('.testimonial-slider');
