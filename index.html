@@ -703,6 +703,7 @@
             border-radius: 8px;
         }
 
+        
         .popup img {
             width: 150px;
             height: 150px;
@@ -763,7 +764,6 @@
             cursor: grabbing;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .testimonial-container {
                 max-width: 80%;
@@ -896,102 +896,12 @@
             }
         }
 
-        /* Media Queries for responsiveness */
-@media (max-width: 1200px) {
-    .container, .container_4 {
-        flex-wrap: wrap;
-    }
-
-    .container {
-        gap: 20px;
-    }
-}
-
-@media (max-width: 992px) {
-    .navbar-menu {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-menu li {
-        margin-left: 0;
-        margin-bottom: 15px;
-    }
-
-    .container_1 {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .flex-item {
-        flex: 1 1 90%;
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-logo {
-        margin-bottom: 20px;
-    }
-
-    .container {
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .title {
-        font-size: 2.5em;
-    }
-
-    .supply {
-        font-size: 1.2em;
-    }
-
-    .container_2 {
-        gap: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-logo img {
-        width: 75px;
-        height: 75px;
-    }
-
-    .container_1, .container_4 {
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .title {
-        font-size: 2em;
-    }
-
-    .subtitle {
-        font-size: 1em;
-    }
-
-    .nft-stack {
-        width: 250px;
-        height: 350px;
-    }
-
-    .container_2 {
-        padding: 1rem;
-    }
-}
-
+        
+        .social-icons a{
+            height: 50px;
+            width: 50px;
+            margin-left: 10px;
+        }
     </style>
 </head>
 
@@ -1118,7 +1028,7 @@
 
             <div class="dropdown" onclick="toggleDropdown(this)">
                 <span class="dropdown-number">01</span>
-                <span class="dropdown-title">How to pay?</span>
+                <span class="dropdown-title">How much to pay?</span>
                 <div class="dropdown-icon">
                     <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -1127,12 +1037,12 @@
                 </div>
             </div>
             <div class="dropdown-content">
-                <p>This section contains information about the whitepaper.</p>
+                <p>The pricing varies based on the different services offered. Each service has its own unique rate. Prices are tailored to the specific needs of each service.</p>
             </div>
 
             <div class="dropdown" onclick="toggleDropdown(this)">
                 <span class="dropdown-number">02</span>
-                <span class="dropdown-title">Why to Pay?</span>
+                <span class="dropdown-title">How to pay for the services?</span>
                 <div class="dropdown-icon">
                     <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -1141,12 +1051,12 @@
                 </div>
             </div>
             <div class="dropdown-content">
-                <p>This section contains answers to frequently asked questions.</p>
+                <p>We offer multiple payment options for your convenience. You can pay using popular online apps like Esewa, Khalti, and Imepay. Additionally, bank transfer is also available as a payment method.</p>
             </div>
 
             <div class="dropdown" onclick="toggleDropdown(this)">
                 <span class="dropdown-number">03</span>
-                <span class="dropdown-title">Who to pay</span>
+                <span class="dropdown-title">How to apply for the services?</span>
                 <div class="dropdown-icon">
                     <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -1155,7 +1065,7 @@
                 </div>
             </div>
             <div class="dropdown-content">
-                <p>This section contains information on how to buy.</p>
+                <p>You can easily apply for our services through several platforms. Simply reach out to us on Discord, Facebook, Instagram, or WhatsApp. These options provide flexibility and convenience for you to get in touch and apply.</p>
             </div>
         </div>
 
@@ -1171,7 +1081,7 @@
                     <div class="slide" onclick="showPopup(2)">
                         <img src="https://via.placeholder.com/150" alt="Profile Image">
                         <h3>Prachan Subedi</h3>
-                        <p>Manager</p>
+                        <p>Co-Founder</p>
                     </div>
                     <div class="slide" onclick="showPopup(3)">
                         <img src="https://via.placeholder.com/150" alt="Profile Image">
@@ -1181,7 +1091,7 @@
                     <div class="slide" onclick="showPopup(4)">
                         <img src="https://via.placeholder.com/150" alt="Profile Image">
                         <h3>Rozeen Shrestha</h3>
-                        <p>Manager / Discord Bot Developer</h3>
+                        <p>Head peon</h3>
                     </div>
                     <div class="slide" onclick="showPopup(5)">
                         <img src="https://via.placeholder.com/150" alt="Profile Image">
@@ -1198,7 +1108,6 @@
                 <button class="next" onclick="moveSlides(1)">&#10095;</button>
             </div>
 
-            <!-- Modal Popup -->
             <div id="popup" class="popup">
                 <div class="popup-content">
                     <span class="close" onclick="closePopup()">&times;</span>
@@ -1206,6 +1115,11 @@
                     <h3 id="popup-name"></h3>
                     <p id="popup-post"></p>
                     <p id="popup-details"></p>
+                    <div class="social-icons">
+                        <a href="#" id="facebook-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" id="instagram-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" id="youtube-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1291,42 +1205,60 @@
                 name: "Garry Shrestha",
                 post: "Founder",
                 image: "https://via.placeholder.com/150",
-                details: "Garry Shrestha is a manxe!!!!"
+                details: "Garry Shrestha is a manxe!!!!",
+                facebook: "https://www.facebook.com/profile.php?id=100085697478489",
+                instagram: "https://www.instagram.com/garry_stha/",
+                youtube: "https://www.youtube.com/garryshrestha"
             },
             {
                 id: 2,
-                name: "Name 2",
-                post: "Post 2",
+                name: "Prachan Subedi",
+                post: "Co - Founder",
                 image: "https://via.placeholder.com/150",
-                details: "Details about Name 2"
+                details: "Details about Name 2",
+                facebook: "https://www.facebook.com/prachansubedi?mibextid=ZbWKwL",
+                instagram: "https://www.instagram.com/prachansubedi?igsh=MThmNmh6cW50YnBjdw==",
+                youtube: "#"
             },
             {
                 id: 3,
-                name: "Name 3",
-                post: "Post 3",
+                name: "Prayas Bhatt",
+                post: "Manager",
                 image: "https://via.placeholder.com/150",
-                details: "Details about Name 3"
+                details: "Details about Name 3",
+                facebook: "https://www.facebook.com/Prayas0519/",
+                instagram: "https://www.instagram.com/prayas_bhatt123/",
+                youtube: "https://www.youtube.com/@prayas0000"
             },
             {
                 id: 4,
-                name: "Name 4",
-                post: "Post 4",
+                name: "Rozeen Shrestha",
+                post: "Manager",
                 image: "https://via.placeholder.com/150",
-                details: "Details about Name 4"
+                details: "Details about Name 4",
+                facebook: "https://www.facebook.com/profile.php?id=100075378231105",
+                instagram: "https://www.instagram.com/r_ozeen/",
+                youtube: "#"
             },
             {
                 id: 5,
-                name: "Name 5",
-                post: "Post 5",
+                name: "Manoj Magar",
+                post: "Graphic Designer",
                 image: "https://via.placeholder.com/150",
-                details: "Details about Name 5"
+                details: "Details about Name 5",
+                facebook: "#",
+                instagram: "#",
+                youtube: "#"
             },
             {
                 id: 6,
                 name: "Name 6",
                 post: "Post 6",
                 image: "https://via.placeholder.com/150",
-                details: "Details about Name 6"
+                details: "Details about Name 6",
+                facebook: "#",
+                instagram: "#",
+                youtube: "#"
             }
         ];
 
